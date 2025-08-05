@@ -1,0 +1,2 @@
+Traning Dataset: https://www.kaggle.com/competitions/digit-recognizer/data?select=train.csv
+Testing Dataset: https://www.kaggle.com/competitions/digit-recognizer/data?select=test.csv
