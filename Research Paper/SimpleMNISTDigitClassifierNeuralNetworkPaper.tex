@@ -1,0 +1,75 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{cite}
+\usepackage[margin=1in]{geometry}
+
+\title{A Simple MNIST Digit Classifier Neural Network Made from scratch in Python}
+\author{Thiruwaran Kalvin (T-Kalv) \\
+Undergraduate Computer Science Student}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{Abstract}
+This research paper presents an implementation of a basic feed-forward neural network for classifying/recognising handwritten digits from the MNIST dataset, built from scratch in Python using only core libraries such as NumPy, Matplotlib, Pandas, and tqdm. This feed-forward neural network model, also known as a multilayer perceptron (MLP), achieves a classification probability accuracy of appoximately 88\% for both the training and testing datasets. This demonstrates the viability of simple neural networks that recognise handwritten numerical digits without the need for external heavy libraries such as PyTorch or TensorFlow, instead utilising only core Python libraries and Juypter Notebook.
+
+\section{Introduction}
+Numerical Digit Classification is a specific field of Image Processing that focuses here on this paper, classifying and recognising handwritten low-level black and white numerical digit images using the MNIST Dataset[1]. This particular task of recognising handwritten digits is vital in the real-world as previously Bank Tellers played a crucial role in processing Cheques by manually verifying (looking) at the authenticity of the Cheques and verifying the Currency amount on the Cheques. This method was time-consuming and in-efficient due to manual Human validation as well as being prone to Human errors. As the level of technology/computation advanced, the need to accurately read hand-written numerical digits especially in sectors such as the Banking industry became more crucial to reduce the likelyhood of errors and reduce processing time. This results in Financial institutions diversting resources more effectivly to other services. Through the advancements in Artificial Intelligence and Machine learning, we can develop systems that can accuracy recognise hand-written digits much more efficient and effectively using hand-written datasets such as MNIST.
+
+\vspace{1em}
+%https://en.wikipedia.org/wiki/MNIST_database#cite_note-yadav2019-23
+MNSIT (Modified Natual Institute of Standard and Technology) database is dataset that consits of handwritten numerical digits that is commonly used for image processing training and contains 60,000 training images used to train the Machine Learning Neural Network model and 10,000 testing images to validate the accuracy of the model. In this paper, we use this famous MNIST dataset which is the standard benchbark for Image Classification algorithms. As the MNIST database was constructed before the turn of the 21st Century, there have many implementations/existing solutions using the MNIST Dataset to classify and recognise hand-written numerical digits such as using tradition methods (including but not limited to KNN (K-Nearest Neighbours), SVM (Support Vector Machines)) and even Deep-Learning methods (including but not limited to CNN (Convultional Neural Network), RNN (Recurrent Neural Network)). Arguably, one of the most gamous implementations it the LeNet-5 architecture which uses CNN consiting of 2 convolutions, 2 subsamplings and 3 fully connected layers with around 60000 trainable paramaters.
+
+\vspace{1em}
+This paper proposes a light-weight simple MNIST Digit Classifier Neural Network consiting of 2 layers with 784 neurons, built without the use of external heavy deep-learning libraries  (only using libraries such as NumPy, Matplotlib) with a particular emphasis on understanding and manually implementing algorithms and functions. This work presents such algorithms and functions such as Forward Propagation, Backpropagation, ReLu (Rectified Linear unit) activation function, Softmax activation function\dots. This results in a reproducible implementation of simple MNSIT Digit Classifier Neural Network, with clear, hand-on demonstration of 'behind-the-scenes' of the network as well as the training procedure and performance benefits/outcomes.
+
+\vspace{1em}
+This paper is organised as follows: Section 3 discusses related work, followed by Section 4 which outlines the Methodology and architecture, Section 5 presents Experimental Evaluation and finally Section 6 concludes with findings and future work.
+
+
+
+\section{Related Work}
+% TODO: Discuss related papers and prior work.
+
+\section{Methodology}
+\subsection{Dataset}
+% TODO: Describe MNIST dataset.
+
+\subsection{Network Architecture}
+% TODO: Describe the neural network architecture.
+
+\subsection{Forward Propagation}
+% TODO: Explain forward pass.
+
+\subsection{Backpropagation and Loss Function}
+% TODO: Explain backward pass and loss.
+
+\subsection{Training}
+% TODO: Describe training loop and parameters.
+
+\section{Experimental Evaluation}
+\subsection{Accuracy Results}
+% TODO: Report performance metrics.
+
+\subsection{Observations}
+% TODO: Discuss what you saw.
+
+\subsection{Limitations and Anomalies}
+% TODO: Mention issues or incorrect predictions.
+
+\section{Conclusion and Future Work}
+% TODO: Wrap up the paper and list ideas for improvement.
+
+\appendix
+\section*{Appendix}
+% TODO: Add any code snippets or extra figures.
+
+\begin{thebibliography}{9}
+% TODO: Add citations here.
+\end{thebibliography}
+
+\end{document}
