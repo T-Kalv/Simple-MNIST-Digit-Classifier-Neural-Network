@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2025/dev/Debian) (preloaded format=pdflatex 2025.6.19)  7 AUG 2025 15:29
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2025/dev/Debian) (preloaded format=pdflatex 2025.6.19)  7 AUG 2025 22:29
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -367,11 +367,13 @@ Package pdftex.def Info: Neural Network.drawio.png  used on input line 61.
 
 [3 <./MNIST_dataset_example.png>]
 
-LaTeX Warning: Empty `thebibliography' environment on input line 94.
+LaTeX Warning: Empty `thebibliography' environment on input line 99.
 
 
 
-[4 <./Neural Network.drawio.png>] (./SimpleMNISTDigitClassifierNeuralNetworkPaper.aux)
+[4 <./Neural Network.drawio.png>]
+
+[5] (./SimpleMNISTDigitClassifierNeuralNetworkPaper.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
@@ -384,18 +386,18 @@ Package rerunfilecheck Info: File `SimpleMNISTDigitClassifierNeuralNetworkPaper.
 (rerunfilecheck)             Checksum: 0CBB0C0D411856EF4E0D7F5AACCB4C97;1918.
  ) 
 Here is how much of TeX's memory you used:
- 10352 strings out of 473197
- 157537 string characters out of 5718605
+ 10353 strings out of 473197
+ 157543 string characters out of 5718605
  563319 words of memory out of 5000000
  33466 multiletter control sequences out of 15000+600000
  564993 words of font info for 59 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,6n,79p,1556b,443s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,6n,79p,1583b,443s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb>
-Output written on SimpleMNISTDigitClassifierNeuralNetworkPaper.pdf (4 pages, 154255 bytes).
+Output written on SimpleMNISTDigitClassifierNeuralNetworkPaper.pdf (5 pages, 155852 bytes).
 PDF statistics:
- 115 PDF objects out of 1000 (max. 8388607)
- 96 compressed objects within 1 object stream
- 23 named destinations out of 1000 (max. 500000)
+ 119 PDF objects out of 1000 (max. 8388607)
+ 99 compressed objects within 1 object stream
+ 24 named destinations out of 1000 (max. 500000)
  123 words of extra memory for PDF output out of 10000 (max. 10000000)
 

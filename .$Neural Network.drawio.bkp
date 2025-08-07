@@ -247,13 +247,13 @@
         <mxCell id="D07jgNAIbt0lG9WC0oUq-58" value="[3]" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="501" y="50" width="60" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="D07jgNAIbt0lG9WC0oUq-59" value="784&lt;div&gt;1st layer&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="160" y="460" width="60" height="30" as="geometry" />
+        <mxCell id="D07jgNAIbt0lG9WC0oUq-59" value="784&lt;div&gt;input layer x&lt;/div&gt;&lt;div&gt;(first layer)&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="160" y="480" width="60" height="30" as="geometry" />
         </mxCell>
         <mxCell id="D07jgNAIbt0lG9WC0oUq-60" value="10&lt;div&gt;hidden layer&lt;/div&gt;&lt;div&gt;(second layer)&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="260" y="480" width="60" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="D07jgNAIbt0lG9WC0oUq-61" value="10&lt;div&gt;output layer&lt;/div&gt;&lt;div&gt;{third layer)&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+        <mxCell id="D07jgNAIbt0lG9WC0oUq-61" value="10&lt;div&gt;output layer&lt;/div&gt;&lt;div&gt;(third layer)&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="360" y="480" width="60" height="30" as="geometry" />
         </mxCell>
       </root>
