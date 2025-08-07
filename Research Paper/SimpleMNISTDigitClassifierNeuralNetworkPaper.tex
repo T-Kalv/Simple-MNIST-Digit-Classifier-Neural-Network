@@ -1,9 +1,11 @@
 \documentclass[11pt]{article}
 \usepackage{amsmath, amssymb}
 \usepackage{graphicx}
+\usepackage{float}
 \usepackage{hyperref}
 \usepackage{cite}
 \usepackage[margin=1in]{geometry}
+
 
 \title{A Simple MNIST Digit Classifier Neural Network Made from scratch in Python}
 \author{Thiruwaran Kalvin (T-Kalv) \\
@@ -39,13 +41,27 @@ Before working on this 'Simple MNIST Digit Classifier Neural Network', previousl
 %https://axon.cs.byu.edu/~martinez/classes/678/Papers/Convolution_nets.pdf
 Previous research into using the MNIST dataset for classifying and recognising handwritten digits has produced a wide-range of models with a variety of complexity and performance benefits to the traditional manual, human-validation of handwritten digits. LeNet-5 [3], introduced in 1998 having achived appoximately a 1\%[5] test error probability which resulted in appoximatly 99\% probability accuracy with the MNSIT dataset, implemented using CNN (Convultional Neural Networks). While LeNET-5[5], achived a respectable, high probability accuracy using CNN, Max Pooling with 2 convultions, 2 subsampling, 3 fully connected layers and around 60000 trainable paramaters, this paper investigates the performance of a simple multilayer perceptron (MLP) using a feed-forward neutal network trained from scratch without the need of heavy, high-level frameworks. However, more modern implementations do use these heavy, high-level frameworks such as PyTorch [6], Keras [7], TensorFlow [8] utilising the performance benefits of GPUs (Graphics Processing Unit) and TPUs (Tensor Processing Units) which help to optimise the speed of learning/training as well with the use of advanced optimisers (including but not limited to Adam). Here due to the added cost of utilising such performance enhancers, the system here presented in this paper will instead utilise modern CPUs for computation and training.
 
-
 \section{Methodology}
 \subsection{Dataset}
-% TODO: Describe MNIST dataset.
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.6\textwidth]{MNIST_dataset_example.png}
+  \caption{Sample handwritten digits from the MNIST dataset. Image by Suvanjanprasai, CC BY-SA 4.0.}
+  \label{fig:mnist}
+\end{figure}
+
+%kaggle mnist dataset
+%image of mnist numbers - By Suvanjanprasai - Own work, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=156115980
+The MNIST dataset [9] contains gray-scale, black and white images of hand-drawn numerical digits from zero to nine (0, 1, 2, 3, 4, 5, 6, 7, 8, 9). Each input 28x28 image (28 pixels in height by 28 pixels in width) contains a total of 784 pixels, where each pixel value is an integer from 0 to 255 resulting in black to white. The dataset consits of 60000 training images for training the model and 10000 testing images for testing the trained model. The training dataset in this paper has 785 columns which are the 'label'. This is the corresponding '0 to 9' digit that was handwritten and the remaining columns are the '0 to 255' pixel values associated with the black and white image. The testing dataset is the same as the traininf dataset execept without containing the labels to validate the accuracy of the model.
+
 
 \subsection{Network Architecture}
-% TODO: Describe the neural network architecture.
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.6\textwidth]{Neural Network.drawio.png}
+  \caption{Simplified Neural Network Architecture used in this Project}
+  \label{fig:mnist}
+\end{figure}
 
 \subsection{Forward Propagation}
 % TODO: Explain forward pass.

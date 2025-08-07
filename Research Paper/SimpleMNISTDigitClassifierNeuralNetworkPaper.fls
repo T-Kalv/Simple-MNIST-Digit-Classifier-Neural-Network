@@ -40,6 +40,8 @@ INPUT /usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
 INPUT /usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
 INPUT /usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
 INPUT /usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
+INPUT /usr/share/texlive/texmf-dist/tex/latex/float/float.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/float/float.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
 INPUT /usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty
@@ -154,6 +156,16 @@ INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr12.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
 INPUT /var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
+INPUT ./MNIST_dataset_example.png
+INPUT ./MNIST_dataset_example.png
+INPUT ./MNIST_dataset_example.png
+INPUT ./MNIST_dataset_example.png
+INPUT ./MNIST_dataset_example.png
+INPUT ./Neural Network.drawio.png
+INPUT ./Neural Network.drawio.png
+INPUT ./Neural Network.drawio.png
+INPUT ./Neural Network.drawio.png
+INPUT ./Neural Network.drawio.png
 INPUT SimpleMNISTDigitClassifierNeuralNetworkPaper.aux
 INPUT ./SimpleMNISTDigitClassifierNeuralNetworkPaper.out
 INPUT ./SimpleMNISTDigitClassifierNeuralNetworkPaper.out

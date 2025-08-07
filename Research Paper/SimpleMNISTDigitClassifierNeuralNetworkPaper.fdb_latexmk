@@ -1,7 +1,7 @@
 # Fdb version 4
-["pdflatex"] 1754563402.87382 "/home/t-kalvin/Desktop/Desktop/Simple-MNIST-Digit-Classifier-Neural-Network/Research Paper/SimpleMNISTDigitClassifierNeuralNetworkPaper.tex" "SimpleMNISTDigitClassifierNeuralNetworkPaper.pdf" "SimpleMNISTDigitClassifierNeuralNetworkPaper" 1754563403.76144 0
+["pdflatex"] 1754576974.05842 "/home/t-kalvin/Desktop/Desktop/Simple-MNIST-Digit-Classifier-Neural-Network/Research Paper/SimpleMNISTDigitClassifierNeuralNetworkPaper.tex" "SimpleMNISTDigitClassifierNeuralNetworkPaper.pdf" "SimpleMNISTDigitClassifierNeuralNetworkPaper" 1754576974.90555 0
   "/etc/texmf/web2c/texmf.cnf" 1750329776.49 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/t-kalvin/Desktop/Desktop/Simple-MNIST-Digit-Classifier-Neural-Network/Research Paper/SimpleMNISTDigitClassifierNeuralNetworkPaper.tex" 1754563402.50587 7552 91baee63464584a1ce2eb359fca44c79 ""
+  "/home/t-kalvin/Desktop/Desktop/Simple-MNIST-Digit-Classifier-Neural-Network/Research Paper/SimpleMNISTDigitClassifierNeuralNetworkPaper.tex" 1754576972.9321 8896 f840bff51e13e0cfb5e66c928d01e2ef ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -58,6 +58,7 @@
   "/usr/share/texlive/texmf-dist/tex/latex/cite/cite.sty" 1425427964 26218 19edeff8cdc2bcb704e8051dc55eb5a7 ""
   "/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty" 1579991033 13886 d1306dcf79a944f6988e688c1785f9ce ""
   "/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty" 1739306980 46850 d87daedc2abdc653769a6f1067849fe0 ""
+  "/usr/share/texlive/texmf-dist/tex/latex/float/float.sty" 1137110151 6749 16d2656a1984957e674b149555f1ea1d ""
   "/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty" 1578002852 41601 9cf6c5257b1bc7af01a58859749dd37a ""
   "/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg" 1465944070 1224 978390e9c2234eab29404bc21b268d1e ""
   "/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def" 1713382759 19440 9da9dcbb27470349a580fca7372d454b ""
@@ -82,9 +83,11 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1741904018 41538 c016915c1d51223b6dbbfe27341748a8 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1750330072 5467255 9a64d1b40e0b893fc5588ecce9d8accf ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1750330148 3349023 0da163182ff39927fb085b836cc9eba5 ""
-  "SimpleMNISTDigitClassifierNeuralNetworkPaper.aux" 1754563403.70136 1832 e0537c6ca4a4598252f45b394eb5ca04 "pdflatex"
-  "SimpleMNISTDigitClassifierNeuralNetworkPaper.out" 1754563403.70236 1918 0cbb0c0d411856ef4e0d7f5aaccb4c97 "pdflatex"
-  "SimpleMNISTDigitClassifierNeuralNetworkPaper.tex" 1754563402.50587 7552 91baee63464584a1ce2eb359fca44c79 ""
+  "MNIST_dataset_example.png" 1754573073.55144 81766 97b109560e43c995aedc56b0b568490f ""
+  "Neural Network.drawio.png" 1754576728.85099 68950 f14149c575c4c405eb4c02cbd6eb292f ""
+  "SimpleMNISTDigitClassifierNeuralNetworkPaper.aux" 1754576974.85113 2433 ee84181e4447077a7f738b07feb3cfcc "pdflatex"
+  "SimpleMNISTDigitClassifierNeuralNetworkPaper.out" 1754576974.85213 1918 0cbb0c0d411856ef4e0d7f5aaccb4c97 "pdflatex"
+  "SimpleMNISTDigitClassifierNeuralNetworkPaper.tex" 1754576972.9321 8896 f840bff51e13e0cfb5e66c928d01e2ef ""
   (generated)
   "SimpleMNISTDigitClassifierNeuralNetworkPaper.aux"
   "SimpleMNISTDigitClassifierNeuralNetworkPaper.log"
