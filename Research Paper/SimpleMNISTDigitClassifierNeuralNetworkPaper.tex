@@ -2,11 +2,13 @@
 \usepackage{amsmath, amssymb}
 \usepackage{graphicx}
 \usepackage{float}
+\usepackage{listings}
+\usepackage{xcolor}
 \usepackage{hyperref}
 \usepackage{cite}
 \usepackage[margin=1in]{geometry}
 
-
+\renewcommand{\lstlistingname}{}
 \title{A Simple MNIST Digit Classifier Neural Network Made from scratch in Python}
 \author{Thiruwaran Kalvin (T-Kalv) \\
 Undergraduate Computer Science Student}
@@ -69,7 +71,29 @@ The Neural Network [Figure 2] is a fully-connected, feed-forward neural network 
 The parameters of this Neural Network consits of a 'weight1' which has a shape of (10,784) connecting the input to the hidden layer, 'bias 1' which has a shape of (10,1) which are the biases for the hidden layer, 'weight 2' which has a shape (10,10) connecting the hidden layer to the output layer and 'bias2' which has a shape of (10,1) which are the biases of the output layer. This results in this simple MNIST Digit Classifier Neural Network having a total of 7960 trainable parameters with 7840 weights, 10 biases between the input layer and hidden layer, 100 weights, 10 biases between the hidden layer and putput layer.
 
 \subsection{Forward Propagation}
-% TODO: Explain forward pass.
+
+\begin{lstlisting}[language={},mathescape=true, caption={Forward Propagation Pseudocode Algorithm}]
+FUNCTION forwardPropagation(weight1, bias1, weight2, bias2, X):
+    Z1 = matrixMultiply(weight1, X) + bias1
+    A1 = ReLuFunc(Z1)
+    Z2 = matrixMultiply(weight2, A1) + bias2
+    A2 = softMaxFunc(Z2)
+    RETURN Z1, A1, Z2, A2
+\end{lstlisting}
+
+\vspace{1em}
+
+\begin{lstlisting}[language={},mathescape=true, caption={ReLu Activation Function Pseudocode}]
+FUNCTION ReLUFunc(Z):
+    RETURN MAXIMUM(0, Z)
+\end{lstlisting}
+
+\vspace{1em}
+The Forward Propagation algorithm used in this project, takes the input data image and runs through the Neural Network layers to determine what the output is going to be. Here in this 'Simple MNIST Digit Classifier Neural Network' the input data is a flattened 28x28 pixel image consiting of 784 pixels. This input image is then represented as a matrix which each row is an example with 784 columns corresponding to 1 pixel in the image. This matrix is then transposed resulting in the rows  examples becoming columns examples. 
+
+\vspace{1em}
+In the first layer (unactivated layer), the input 'X' is matrix multiplied by the weight1 (first weight) and then the bias term is added, resulting in Z1 which is the first unactivated first layer in the matrix (as illustrated in '1: Forward Propagation Pseudocode Algotithm' above). The second layer is a linear combination of the first layer which results in a purely linear transformation, hindering the Neural Network's ability to model non-linear relationships. This leads to an application of a ReLu (Rectified Linear unit) activation function which is applied to Z1 to introduce non-linearities where it processes each element in Z returning the value if it greater than zero or return zero otherwise (as illustrated in '2: ReLU Activation Function Pseudocode' above) leading to A1. Then in the pre-activation, output layer, A1 is then matrix multiplied by weight2 (second weight) and then the second bias term is added, resulting in Z2. This leads to an application of the Softmax activation function which is used to convert the raw values into probability values for each of the 10 possible numerical digit classes (0, 1, 2, 3, 4, 5, 6, 7, 8, 9), resulting in A2.
+
 
 \subsection{Backpropagation and Loss Function}
 % TODO: Explain backward pass and loss.
