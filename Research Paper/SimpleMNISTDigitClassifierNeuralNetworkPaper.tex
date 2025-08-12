@@ -88,15 +88,57 @@ FUNCTION ReLUFunc(Z):
     RETURN MAXIMUM(0, Z)
 \end{lstlisting}
 
+\begin{lstlisting}[language={},mathescape=true, caption={Softmax Activation Function Pseudocode}]
+FUNCTION softmaxFunc(Z):
+    maxZ = MAX(Z, axis=0)
+    shiftedZ = Z - maxZ
+    expZ = EXP(shiftedZ)
+    sumExpZ = SUM(expZ, axis=0)
+    RETURN (expZ / sumExpZ)
+\end{lstlisting}
+
 \vspace{1em}
 The Forward Propagation algorithm used in this project, takes the input data image and runs through the Neural Network layers to determine what the output is going to be. Here in this 'Simple MNIST Digit Classifier Neural Network' the input data is a flattened 28x28 pixel image consiting of 784 pixels. This input image is then represented as a matrix which each row is an example with 784 columns corresponding to 1 pixel in the image. This matrix is then transposed resulting in the rows  examples becoming columns examples. 
 
 \vspace{1em}
-In the first layer (unactivated layer), the input 'X' is matrix multiplied by the weight1 (first weight) and then the bias term is added, resulting in Z1 which is the first unactivated first layer in the matrix (as illustrated in '1: Forward Propagation Pseudocode Algotithm' above). The second layer is a linear combination of the first layer which results in a purely linear transformation, hindering the Neural Network's ability to model non-linear relationships. This leads to an application of a ReLu (Rectified Linear unit) activation function which is applied to Z1 to introduce non-linearities where it processes each element in Z returning the value if it greater than zero or return zero otherwise (as illustrated in '2: ReLU Activation Function Pseudocode' above) leading to A1. Then in the pre-activation, output layer, A1 is then matrix multiplied by weight2 (second weight) and then the second bias term is added, resulting in Z2. This leads to an application of the Softmax activation function which is used to convert the raw values into probability values for each of the 10 possible numerical digit classes (0, 1, 2, 3, 4, 5, 6, 7, 8, 9), resulting in A2.
+In the first layer (unactivated layer), the input 'X' is matrix multiplied by the weight1 (first weight) and then the bias term is added, resulting in Z1 which is the first unactivated first layer in the matrix (as illustrated in '1: Forward Propagation Pseudocode Algotithm' above). 
 
+\vspace{1em}
+The second layer is a linear combination of the first layer which results in a purely linear transformation, hindering the Neural Network's ability to model non-linear relationships. This leads to an application of a ReLu (Rectified Linear unit) activation function which is applied to Z1 to introduce non-linearities where it processes each element in Z returning the value if it greater than zero or return zero otherwise (as illustrated in '2: ReLU Activation Function Pseudocode' above) leading to A1. 
 
-\subsection{Backpropagation and Loss Function}
-% TODO: Explain backward pass and loss.
+\vspace{1em}
+In the pre-activation, output layer, A1 is then matrix multiplied by weight2 (second weight) and then the second bias term is added, resulting in Z2. This leads to an application of the Softmax activation function (as illustrated in '3: Softmax Activation Function Pseudocode' above) which is used to convert the raw values into probability values for each of the 10 possible numerical digit classes (0, 1, 2, 3, 4, 5, 6, 7, 8, 9), resulting in A2.
+
+\subsection{Backpropagation}
+The Backpropagation algorithm used in this project, uses this predicted output probabilities from the Forward Propagation algorithm as a starting point. The Backpropagation algorithm then computes the gradients of the loss function with respect to each of the parameters in the Neural Network. It does this by calculating how much the Forward Propagation prediction deviated by and compare it to the actual label from the MNIST dataset resulting in an error loss value and calculate how much the previous weights and biases contributed and adjust these values, from the output layer moving backward through the network in the opposite direction to the movement of Forward Propagation algorithm.
+
+\begin{figure}[H]
+\centering
+\[
+\mathrm{one\_hot}(i, K) =
+\begin{bmatrix}
+0 \\
+0 \\
+\vdots \\
+1 \\
+\vdots \\
+0
+\end{bmatrix},
+\quad
+\text{where the $1$ appears at index $i$ and $K$ is the total number of classes.}
+\]
+\caption{One-Hot Encoding Algorithm}
+\end{figure}
+
+\vspace{1em}
+Firstly, a One-Hot Encoding algorithm is applied (as illustrated in 'Figure 3: One-Hot Encoding Algotithm') where it creates a matrx array of zeros with 10 output classes, 0 to 9, and goes through each row in the matrix specified by the label Y and sets it to 1. Then it tranposes the matrix so that each coloumn is an example instead of a row.
+
+\vspace{1em}
+After the One-Hot Encoding Matrix Y is returned, the output layer calculation is performed. This is done by first subtracting the One-Hot Encoding Matrix Y labels from the predicted probabilities from the Forward Propagation algorithm. This reults in dZ2 which is error of the second layer in the Nerual Network, which represents the deviation from the correct label.
+
+\vspace{1em}
+dW2, which is the weights gradient in the second layer, is calculated by first calculating the size of the One-Hot Encoding Matrix Y, m. Then it multiplies dZ2 with the transpose of A1 (which is the hidden layer activations) and divided by m. This results in the derivative of the loss function with respect to the weights in layer 2.
+
 
 \subsection{Training}
 % TODO: Describe training loop and parameters.
