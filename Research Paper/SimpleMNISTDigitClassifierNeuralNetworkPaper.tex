@@ -110,7 +110,7 @@ The second layer is a linear combination of the first layer which results in a p
 In the pre-activation, output layer, A1 is then matrix multiplied by weight2 (second weight) and then the second bias term is added, resulting in Z2. This leads to an application of the Softmax activation function (as illustrated in '3: Softmax Activation Function Pseudocode' above) which is used to convert the raw values into probability values for each of the 10 possible numerical digit classes (0, 1, 2, 3, 4, 5, 6, 7, 8, 9), resulting in A2.
 
 \subsection{Backpropagation}
-The Backpropagation algorithm used in this project, uses this predicted output probabilities from the Forward Propagation algorithm as a starting point. The Backpropagation algorithm then computes the gradients of the loss function with respect to each of the parameters in the Neural Network. It does this by calculating how much the Forward Propagation prediction deviated by and compare it to the actual label from the MNIST dataset resulting in an error loss value and calculate how much the previous weights and biases contributed and adjust these values, from the output layer moving backward through the network in the opposite direction to the movement of Forward Propagation algorithm.
+The Backpropagation algorithm used in this project, uses the predicted output probabilities from the Forward Propagation algorithm as a starting point. The Backpropagation algorithm then computes the gradients of the loss function with respect to each of the parameters in the Neural Network. It does this by calculating how much the Forward Propagation prediction deviated by and compares it to the actual label from the MNIST dataset resulting in an error loss value and calculates how much the previous weights and biases contributed and adjust these values, from the output layer moving backward through the network in the opposite direction to the movement of Forward Propagation algorithm.
 
 \begin{figure}[H]
 \centering
@@ -139,6 +139,17 @@ After the One-Hot Encoding Matrix Y is returned, the output layer calculation is
 \vspace{1em}
 dW2, which is the weights gradient in the second layer, is calculated by first calculating the size of the One-Hot Encoding Matrix Y, m. Then it multiplies dZ2 with the transpose of A1 (which is the hidden layer activations) and divided by m. This results in the derivative of the loss function with respect to the weights in layer 2.
 
+\vspace{1em}
+dB2, which is the bias gradient for the second layer in the Neural Network, is computed by getting the size of the One-Hot Encoding Matrix Y, m and then then summing all of the elements in dZ2 and dividing by m. This results in average of the absolute error for the seccond layer, dB2.
+
+\vspace{1em}
+After the average of the absolute error for the second layer is obtained, the error is then back propagated to the hidden layer by multiplying the transpose of weight2 with dZ2 and then multipying by the ReLu derivative activation function to Z1. This results in dZ1 which represents how much the first hidden layer has been deviated by.
+
+\vspace{1em}
+Then DW1, which is the first layer weight gradient, is computed by getting the size of the One-Hot Encoding Matrix Y, m and then multiplying dZ1 with the input Matrix X that has been transposed and divide by m. This results in the how much weight1 in the first layer contributed to next layer's (hidden layer) error.
+
+\vspace{1em}
+Finally, dB1, which is the first layer biases gradient, is computed by getting the size of the One-Hot Encoding Matrix Y, m and then summing all the elements in dZ1 and dividing by m. This results in how much bias1 contributed to the first layer to the Neural Network overall error.
 
 \subsection{Training}
 % TODO: Describe training loop and parameters.
