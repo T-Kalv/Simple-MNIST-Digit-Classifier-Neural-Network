@@ -152,7 +152,44 @@ Then DW1, which is the first layer weight gradient, is computed by getting the s
 Finally, dB1, which is the first layer biases gradient, is computed by getting the size of the One-Hot Encoding Matrix Y, m and then summing all the elements in dZ1 and dividing by m. This results in how much bias1 contributed to the first layer to the Neural Network overall error.
 
 \subsection{Training}
-% TODO: Describe training loop and parameters.
+\begin{lstlisting}[language={},mathescape=true, caption={Initialise Paramaters Pseudocode}]
+FUNCTION initialiseParameters():
+    weight1 = randomMatrix(10, 784) - 0.5
+    weight2 = randomMatrix(10, 10) - 0.5
+    bias1 = randomMatrix(10, 1) - 0.5
+    bias2 = randomMatrix(10, 1) - 0.5
+    RETURN weight1, weight2, bias1, bias2
+\end{lstlisting}
+
+\begin{lstlisting}[language={},mathescape=true, caption={Update Paramaters Pseudocode}]
+FUNCTION updateParameters():
+    weight1 = weight1 - $\alpha$ x dW1
+    weight2 = weight2 - $\alpha$ x dW2
+    bias1 = bias1 - $\alpha$ x dB1
+    bias2 = bias2 - $\alpha$ x dB2
+    RETURN weight1, weight2, bias1, bias2
+\end{lstlisting}
+
+
+\vspace{1em}
+In order for this simple MNIST Digit Classifier Neural Network to learn from the training dataset, a gradientDescent function is used where it iteratively adjusts the Neural Networks parameters (weights and biases) to accurately predict numerical handwritten digits based on errors made before.
+
+\vspace{1em}
+Firstly, we assign random starting values to weight1, weight2, bias1, bias2 in each of the layers and subtract by 0.5 which helps to ensure the initial weights and biases are centered around zero than being positive (as illustrated in '4: Initialise Paramaters Pseudocode' above). This reults in the Neurons in the Neural Network start with different parameters while training and ensures the Network learns effectively.
+
+\vspace{1em}
+After the paramters have been initialised, forwardPropagation is performed where it takes the input data image and runs through the Neural Network layers to determine what the output data is going to be (as mentioned earlier in this paper in 'Section 4.3 - Forward Propagation').
+
+\vspace{1em}
+The predicted ouput probabilities from forwardPropagation is then used in Backpropagation, where it computes the gradients of the loss function with respect to each of the parameters in the Neural Network and calulated the deviation of its predictions from the correct label from the MNIST dataset (as mentioned earlier in this paper in 'Section 4.4 - Backpropagation').
+
+\vspace{1em}
+After the gradients of the loss function with respect to each of the parameters in the Neural Network have been computed, updateParameters is performed where each weight1, weight2, bias1, bias2 are adjusted depending on the results in the gradientDescent algorithm. Here in updateParameters, each parameter is updated by getting the product of the rate of learning $\alpha$ and subtracting it with its corresponding gradient. This process is repeated for each of the paramaters where it gradually reduces the error loss by moving the paramaters in the direction where it improved the performance of the Neural Network.
+
+\vspace{1em}
+Finally, here in this simple MNIST Digit Classifier Neural Network Model, for every 10th iteration we fetchPrecitions and fetchAccuracy while training.
+
+
 
 \section{Experimental Evaluation}
 \subsection{Accuracy Results}
