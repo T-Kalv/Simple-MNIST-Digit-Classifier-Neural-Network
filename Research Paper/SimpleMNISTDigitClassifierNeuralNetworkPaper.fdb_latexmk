@@ -1,7 +1,7 @@
 # Fdb version 4
-["pdflatex"] 1755022944.88907 "/home/t-kalvin/Desktop/Desktop/Simple-MNIST-Digit-Classifier-Neural-Network/Research Paper/SimpleMNISTDigitClassifierNeuralNetworkPaper.tex" "SimpleMNISTDigitClassifierNeuralNetworkPaper.pdf" "SimpleMNISTDigitClassifierNeuralNetworkPaper" 1755022945.90785 0
+["pdflatex"] 1755087004.87922 "/home/t-kalvin/Desktop/Desktop/Simple-MNIST-Digit-Classifier-Neural-Network/Research Paper/SimpleMNISTDigitClassifierNeuralNetworkPaper.tex" "SimpleMNISTDigitClassifierNeuralNetworkPaper.pdf" "SimpleMNISTDigitClassifierNeuralNetworkPaper" 1755087005.92477 0
   "/etc/texmf/web2c/texmf.cnf" 1750329776.49 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/t-kalvin/Desktop/Desktop/Simple-MNIST-Digit-Classifier-Neural-Network/Research Paper/SimpleMNISTDigitClassifierNeuralNetworkPaper.tex" 1755022944.61888 19135 21b0cf608664ce4408ae2d6745b4cdb3 ""
+  "/home/t-kalvin/Desktop/Desktop/Simple-MNIST-Digit-Classifier-Neural-Network/Research Paper/SimpleMNISTDigitClassifierNeuralNetworkPaper.tex" 1755087004.58683 20431 50af44d44fbda84775a7a7014fc11dcb ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/tcrm1095.tfm" 1136768653 1536 02c06700a42be0f5a28664c7273f82e7 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
@@ -100,9 +100,9 @@
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1750330148 3349023 0da163182ff39927fb085b836cc9eba5 ""
   "MNIST_dataset_example.png" 1754573073.55144 81766 97b109560e43c995aedc56b0b568490f ""
   "Neural Network.drawio.png" 1754576728.85099 68950 f14149c575c4c405eb4c02cbd6eb292f ""
-  "SimpleMNISTDigitClassifierNeuralNetworkPaper.aux" 1755022945.84189 3240 8fb5682946bfe9d14bd0a269b7c667ba "pdflatex"
-  "SimpleMNISTDigitClassifierNeuralNetworkPaper.out" 1755022945.84289 1819 90defc8b9c16dd931ce63717cd0aa57c "pdflatex"
-  "SimpleMNISTDigitClassifierNeuralNetworkPaper.tex" 1755022944.61888 19135 21b0cf608664ce4408ae2d6745b4cdb3 ""
+  "SimpleMNISTDigitClassifierNeuralNetworkPaper.aux" 1755087005.86309 3256 155fa48fc290a5ee0a681ccf910bbe6e "pdflatex"
+  "SimpleMNISTDigitClassifierNeuralNetworkPaper.out" 1755087005.86309 1908 88db5c661640a0ea03bc810b258d9911 "pdflatex"
+  "SimpleMNISTDigitClassifierNeuralNetworkPaper.tex" 1755087004.58683 20431 50af44d44fbda84775a7a7014fc11dcb ""
   (generated)
   "SimpleMNISTDigitClassifierNeuralNetworkPaper.aux"
   "SimpleMNISTDigitClassifierNeuralNetworkPaper.log"

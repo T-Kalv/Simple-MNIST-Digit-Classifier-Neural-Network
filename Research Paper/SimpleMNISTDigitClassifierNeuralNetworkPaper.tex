@@ -26,7 +26,7 @@ Numerical Digit Classification is a specific field of Image Processing that focu
 
 \vspace{1em}
 %https://en.wikipedia.org/wiki/MNIST_database#cite_note-yadav2019-23
-MNSIT (Modified Natual Institute of Standard and Technology) database is dataset that consits of handwritten numerical digits that is commonly used for image processing training and contains 60,000 training images used to train the Machine Learning Neural Network model and 10,000 testing images to validate the accuracy of the model. In this paper, we use this famous MNIST dataset which is the standard benchbark for Image Classification algorithms. As the MNIST database was constructed before the turn of the 21st Century, there have many implementations/existing solutions using the MNIST Dataset to classify and recognise hand-written numerical digits such as using tradition methods (including but not limited to KNN (K-Nearest Neighbours), SVM (Support Vector Machines)) and even Deep-Learning methods (including but not limited to CNN (Convultional Neural Network), RNN (Recurrent Neural Network)). Arguably, one of the most famous implementations it the LeNet-5 architecture [3] which uses CNN consiting of 2 convolutions, 2 subsamplings and 3 fully connected layers with around 60000 trainable paramaters.
+MNSIT (Modified Natual Institute of Standard and Technology) database is dataset that consits of handwritten numerical digits that is commonly used for image processing training and contains 60,000 training images used to train the Machine Learning Neural Network model and 10,000 testing images to validate the accuracy of the model. In this paper, we use this famous MNIST dataset which is the standard benchbark for Image Classification algorithms. As the MNIST database was constructed before the turn of the 21st Century, there have many implementations/existing solutions using the MNIST Dataset to classify and recognise hand-written numerical digits such as using tradition methods (including but not limited to KNN (K-Nearest Neighbours), SVM (Support Vector Machines)) and even Deep-Learning methods (including but not limited to CNN (Convultional Neural Network), RNN (Recurrent Neural Network)). Arguably, one of the most famous implementations is the LeNet-5 architecture [3] which uses CNN consiting of 2 convolutions, 2 subsamplings and 3 fully connected layers with around 60000 trainable paramaters.
 
 \vspace{1em}
 This paper proposes a light-weight simple MNIST Digit Classifier Neural Network [4] consiting of 2 layers with 784 neurons, built without the use of external heavy deep-learning libraries  (only using libraries such as NumPy, Matplotlib) with a particular emphasis on understanding and manually implementing algorithms and functions. This work presents such algorithms and functions such as Forward Propagation, Backpropagation, ReLu (Rectified Linear unit) activation function, Softmax activation function\dots. This results in a reproducible implementation of simple MNSIT Digit Classifier Neural Network, with clear, hand-on demonstration of 'behind-the-scenes' of the network as well as the training procedure and performance benefits/outcomes.
@@ -192,11 +192,14 @@ Finally, here in this simple MNIST Digit Classifier Neural Network Model, for ev
 
 
 \section{Experimental Evaluation}
-\subsection{Accuracy Results}
-% TODO: Report performance metrics.
+\subsection{Benchmarks and Setup}
+In order to evaluate the performance of the 'Simple MNIST Digit Classifier Neural Network', the MNIST dataset for classifying and recognising handwritten digtis was used as the benchmark. This MNIST dataset consists of 60000 training images for training the model and 10000 testing images for testing the trained model. Each image is 28x28 black and white pixel image with a total of 784 pixels per image, labelled with the coresponding digit classifying '0 to 9' digit. This benchmark was selected for this Research Project as it serves as the main benchmark for evaluating image processing systems/ machine learning algorithms such as for this 'Simple MNIST Digit Classifier Neural Network' as well as allowing for direct comparison with the LeNet-5 architecture (LeCun et al., 1998) [3].
 
-\subsection{Observations}
-% TODO: Discuss what you saw.
+\vspace{1em}
+All experiments were conducted on a Laptop equipped with Intel i7-1360P CPU (5GHz), 16 GB RAM, running Ubuntu 25.04. The implementation was programmed using Python 3.13.3 via Juypter Notebook using the core libraries: Numpy 2.3.2, Matplotlib 3.10.5, Pandas 2.3.1, tqdm 4.67.1. All training was performed on-device via CPU without GPU Or TPU Or NPU acceleration.
+
+\subsection{Results and Observations}
+The first 'working implementation*' achieved a classification probability accuracy of appoximately 9.85\% on the training dataset with 100 iterations and rate of learning of 0.1.
 
 \subsection{Limitations and Anomalies}
 % TODO: Mention issues or incorrect predictions.
