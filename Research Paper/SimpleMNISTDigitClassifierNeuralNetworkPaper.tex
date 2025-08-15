@@ -192,6 +192,7 @@ Finally, here in this simple MNIST Digit Classifier Neural Network Model, for ev
 
 
 \section{Experimental Evaluation}
+
 \subsection{Benchmarks and Setup}
 In order to evaluate the performance of the 'Simple MNIST Digit Classifier Neural Network', the MNIST dataset for classifying and recognising handwritten digtis was used as the benchmark. This MNIST dataset consists of 60000 training images for training the model and 10000 testing images for testing the trained model. Each image is 28x28 black and white pixel image with a total of 784 pixels per image, labelled with the coresponding digit classifying '0 to 9' digit. This benchmark was selected for this Research Project as it serves as the main benchmark for evaluating image processing systems/ machine learning algorithms such as for this 'Simple MNIST Digit Classifier Neural Network' as well as allowing for direct comparison with the LeNet-5 architecture (LeCun et al., 1998) [3].
 
@@ -207,15 +208,21 @@ The second 'working implementation*' achived a slightly improved classification 
 \vspace{1em}
 The third 'working implementation*' achived a much improved classification probability accuracy of appoximately 89\% on the training dataset with 1000 iterations and rate of learning of 0.1. In the testing dataset, it also achieved a much improved classification accuracy of appoximately 88\% with 1000 iterations and rate of learning 0.1. This much improved implementation was due to the fixes previously mentioned before as well as implementing a progress indication (via the tqdm library) during training so that the user can track the progress throughout the training of the Neural Network model. These changes resuted in a more stable learning experience for the model, correctly identifying 10 random numerical handwritten digits out of the possible 10 random numerical handwritten digits from the training dataset when testing after training the model with the training dataset. With the testing dataset, out of possible 10 random numerical handwritten digits from the testing dataset, the trained Neural Network model achieved correctly 9 numerical handwritten digit classifications.
 
-\vspace{1em}
-
-
 \subsection{Limitations and Anomalies}
-% TODO: Mention issues or incorrect predictions.
-
+While repeated training of the 'Simple MNSIT Digit Classifier Neural Network' and evaluating results, random, non-deterministic misclassification results were observed. For example, during one run of training at the end [10], the Neural Network predicted the numerical digit '3' instead of correctly predicting the numerical digit '8, resulting in a misclassification. We cannot fully explain this behaviour but we think it is due to the randomness in the training process such as initialising random weights, shuffling the traning set, the precision of floating point in Matrix operations. These stochastic effects may have lead to slight variations in paramters while learning, reultung in this misclassification.
 
 \section{Conclusion and Future Work}
-% TODO: Wrap up the paper and list ideas for improvement.
+\subsection{Summary}
+We have presented the 'Simple MNIST Digit Classifier Neural Network', a system that is made from scratch in Python with only core libraries such as NumPy, Matplotlib, Pandas and tqdm. The purpose was to implement a feed-foward neural network model/MLP (multilayer perceptron) that can recognise and classify numerical handwritten digits from the MNIST data as well as gaining a deeper understanding of the underlying core mathematics and algorithms such as forward propagation, backpropagation, ReLu (Rectified Linear unit) activation function, Softmax activation function\dots
+
+\subsection{Experimental Results}
+The experimental results obtained using the MNIST dataset indicate that the 'Simple MNIST Digit Classifier Neural Network' achieved an accuracy of 89\% with consistent performance throught the training of the network and testing of the network despite ocassional stochastic results. All experiments were conducted with only CPU computation without access to a GPU, NPU, TPU hardware acceleration as well as no use of heavy, high-level frameworks such as PyTorch, TensorFlow, JAX. This clearly demonstrates the viability that a model can achive respectable performance on-par with modern implementations and previous implementations with only core libraries and fundamental mathematics.
+
+\subsection{Conclusion}
+In conclusion, the results clearly demonstrate the viability that a model can achieve respectable performance on-par with modern implementations and previous implementations with only core libraries and fundamental mathematics without leveraging performance enhancers such as high-level machine learning frameworks and hardware acceleration. However, the ocassional stochastic misclassification of numerical handwritten digits that were observed indicate that model stability is an important consideration in the future. Furthermore, the current design of this simple neural network hinders its ability to capture more complex classification is also an important consideration for the future.
+
+\subsection{Future Work}
+Future work would be to further investigate the non-deterministic misclassifications by temporarily fixing random seeds to increase the reproducibility of results and increasing the overall performance of the model to achieve 99\% coverage across the MNSIT dataset. This can be done by implementing convolutional layers, regularisation techiniques...
 
 \appendix
 \section*{Appendix}
