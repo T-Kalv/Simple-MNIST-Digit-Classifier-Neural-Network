@@ -26,19 +26,19 @@ This research paper presents an implementation of a basic feed-forward neural ne
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.6\textwidth]{Cheque_Sample_Images.png}
-  \caption{Automatic processing of handwritten bank cheque images: A survey. International Journal on Document Analysis and Recognition}
+  \caption{Examples of handwritten bank cheques from different countries (adapted from \cite{jayadevan2011survey})}
   \label{fig:mnist}
 \end{figure}
 
 \vspace{1em}
-Numerical Digit Classification is a specific field of Image Processing that focuses here on this paper, classifying and recognising handwritten low-level black and white numerical digit images using the MNIST Dataset[1]. This particular task of recognising handwritten digits is vital in the real-world as previously Bank Tellers played a crucial role in processing Cheques by manually verifying (looking) at the authenticity of the Cheques and verifying the Currency amount on the Cheques (as illustrated in 'Figure 1 - Automatic processing of handwritten bank cheque images: A survey. International Journal on Document Analysis and Recognition'). This method was time-consuming and in-efficient due to manual Human validation as well as being prone to Human errors. As the level of technology/computation advanced, the need to accurately read hand-written numerical digits especially in sectors such as the Banking industry became more crucial to reduce the likelyhood of errors and reduce processing time. This results in Financial institutions diversting resources more effectivly to other services. Through the advancements in Artificial Intelligence and Machine learning, we can develop systems that can accuracy recognise hand-written digits much more efficient and effectively using hand-written datasets such as MNIST.
+Numerical Digit Classification is a specific field of Image Processing that focuses here on this paper, classifying and recognising handwritten low-level black and white numerical digit images using the MNIST Dataset. Here this research paper uses the Kaggle Digit Recognizer training data \cite{kaggle-train-digits} and the corresponding testing dataset \cite{kaggle-test-digits} to evaluate performance. This particular task of recognising handwritten digits is vital in the real-world as previously Bank Tellers played a crucial role in processing Cheques by manually verifying (looking) at the authenticity of the Cheques and verifying the Currency amount on the Cheques (as illustrated in 'Figure 1 - Automatic processing of handwritten bank cheque images: A survey. International Journal on Document Analysis and Recognition'). This method was time-consuming and in-efficient due to manual Human validation as well as being prone to Human errors. As the level of technology/computation advanced, the need to accurately read hand-written numerical digits especially in sectors such as the Banking industry became more crucial to reduce the likelyhood of errors and reduce processing time. This results in Financial institutions diversting resources more effectivly to other services. Through the advancements in Artificial Intelligence and Machine learning, we can develop systems that can accuracy recognise hand-written digits much more efficient and effectively using hand-written datasets such as MNIST.
 
 \vspace{1em}
 %https://en.wikipedia.org/wiki/MNIST_database#cite_note-yadav2019-23
-MNSIT (Modified Natual Institute of Standard and Technology) database is dataset that consits of handwritten numerical digits that is commonly used for image processing training and contains 60,000 training images used to train the Machine Learning Neural Network model and 10,000 testing images to validate the accuracy of the model. In this paper, we use this famous MNIST dataset which is the standard benchbark for Image Classification algorithms. As the MNIST database was constructed before the turn of the 21st Century, there have many implementations/existing solutions using the MNIST Dataset to classify and recognise hand-written numerical digits such as using tradition methods (including but not limited to KNN (K-Nearest Neighbours), SVM (Support Vector Machines)) and even Deep-Learning methods (including but not limited to CNN (Convultional Neural Network), RNN (Recurrent Neural Network)). Arguably, one of the most famous implementations is the LeNet-5 architecture [3] which uses CNN consiting of 2 convolutions, 2 subsamplings and 3 fully connected layers with around 60000 trainable paramaters.
+MNSIT (Modified Natual Institute of Standard and Technology) database is dataset that consits of handwritten numerical digits that is commonly used for image processing training and contains 60,000 training images used to train the Machine Learning Neural Network model and 10,000 testing images to validate the accuracy of the model. In this paper, we use this famous MNIST dataset which is the standard benchbark for Image Classification algorithms. As the MNIST database was constructed before the turn of the 21st Century, there have many implementations/existing solutions using the MNIST Dataset to classify and recognise hand-written numerical digits such as using tradition methods (including but not limited to KNN (K-Nearest Neighbours), SVM (Support Vector Machines)) and even Deep-Learning methods (including but not limited to CNN (Convultional Neural Network), RNN (Recurrent Neural Network)). Arguably, one of the most famous implementations is the LeNet-5 architecture /cite{} which uses CNN consiting of 2 convolutions, 2 subsamplings and 3 fully connected layers with around 60000 trainable paramaters.
 
 \vspace{1em}
-This paper proposes a light-weight simple MNIST Digit Classifier Neural Network [4] consiting of 2 layers with 784 neurons, built without the use of external heavy deep-learning libraries  (only using libraries such as NumPy, Matplotlib) with a particular emphasis on understanding and manually implementing algorithms and functions. This work presents such algorithms and functions such as Forward Propagation, Backpropagation, ReLu (Rectified Linear unit) activation function, Softmax activation function\dots. This results in a reproducible implementation of simple MNSIT Digit Classifier Neural Network, with clear, hand-on demonstration of 'behind-the-scenes' of the network as well as the training procedure and performance benefits/outcomes.
+This paper proposes a light-weight simple MNIST Digit Classifier Neural Network \cite{simplemnsit} consiting of 2 layers with 784 neurons, built without the use of external heavy deep-learning libraries  (only using libraries such as NumPy, Matplotlib) with a particular emphasis on understanding and manually implementing algorithms and functions. This work presents such algorithms and functions such as Forward Propagation, Backpropagation, ReLu (Rectified Linear unit) activation function, Softmax activation function\dots. This results in a reproducible implementation of simple MNSIT Digit Classifier Neural Network, with clear, hand-on demonstration of 'behind-the-scenes' of the network as well as the training procedure and performance benefits/outcomes.
 
 \vspace{1em}
 This paper is organised as follows: Section 3 discusses related work, followed by Section 4 which outlines the Methodology and architecture, Section 5 presents Experimental Evaluation and finally Section 6 concludes with findings and future work.
@@ -50,20 +50,21 @@ Before working on this 'Simple MNIST Digit Classifier Neural Network', previousl
 
 \vspace{1em}
 %https://axon.cs.byu.edu/~martinez/classes/678/Papers/Convolution_nets.pdf
-Previous research into using the MNIST dataset for classifying and recognising handwritten digits has produced a wide-range of models with a variety of complexity and performance benefits to the traditional manual, human-validation of handwritten digits. LeNet-5 [3], introduced in 1998 having achived appoximately a 1\%[5] test error probability which resulted in appoximately 99\% probability accuracy with the MNSIT dataset, implemented using CNN (Convultional Neural Networks). While LeNET-5[5], achived a respectable, high probability accuracy using CNN, Max Pooling with 2 convultions, 2 subsampling, 3 fully connected layers and around 60000 trainable paramaters, this paper investigates the performance of a simple multilayer perceptron (MLP) using a feed-forward neutal network trained from scratch without the need of heavy, high-level frameworks. However, more modern implementations do use these heavy, high-level frameworks such as PyTorch [6], Keras [7], TensorFlow [8] utilising the performance benefits of GPUs (Graphics Processing Unit), NPU (Neural Processing Unit), TPUs (Tensor Processing Units) which help to optimise the speed of learning/training as well with the use of advanced optimisers (including but not limited to Adam). Here due to the added cost of utilising such performance enhancers, the system here presented in this paper will instead utilise modern CPUs for computation and training.
+Previous research into using the MNIST dataset for classifying and recognising handwritten digits has produced a wide-range of models with a variety of complexity and performance benefits to the traditional manual, human-validation of handwritten digits. LeNet-5 \cite{lenet}, introduced in 1998 having achieved appoximately a 1\% \cite{lenet} test error probability which resulted in appoximately 99\% probability accuracy with the MNSIT dataset \cite{mnist}, implemented using CNN (Convultional Neural Networks). While LeNET-5 \cite{lenet}, achived a respectable, high probability accuracy using CNN, Max Pooling with 2 convultions, 2 subsampling, 3 fully connected layers and around 60000 trainable paramaters, this paper investigates the performance of a simple multilayer perceptron (MLP) using a feed-forward neutal network trained from scratch without the need of heavy, high-level frameworks. However, more modern implementations do use these heavy, high-level frameworks such as PyTorch \cite{PyTorch}, Keras \cite{Keras}, TensorFlow \cite{TensorFlow}, JAX \cite{JAX} utilising the performance benefits of GPUs (Graphics Processing Unit), NPU (Neural Processing Unit), TPUs (Tensor Processing Units) which help to optimise the speed of learning/training as well with the use of advanced optimisers (including but not limited to Adam). Here due to the added cost of utilising such performance enhancers, the system here presented in this paper will instead utilise modern CPUs for computation and training.
 
 \section{Methodology}
 \subsection{Dataset}
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.6\textwidth]{MNIST_dataset_example.png}
-  \caption{Sample handwritten digits from the MNIST dataset. Image by Suvanjanprasai, CC BY-SA 4.0.}
+  \caption{Sample handwritten digits from the MNIST dataset. Image by Suvanjanprasai, CC BY-SA 4.0 (see \cite{mnsitpic})}
+
   \label{fig:mnist}
 \end{figure}
 
 %kaggle mnist dataset
 %image of mnist numbers - By Suvanjanprasai - Own work, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=156115980
-The MNIST dataset [9] contains gray-scale, black and white images of hand-drawn numerical digits from zero to nine (0, 1, 2, 3, 4, 5, 6, 7, 8, 9). Each image is 28 pixels in height by 28 pixels in width) contains a total of 784 pixels, where each pixel value is an integer from 0 to 255 resulting in black to white. The dataset consits of 60000 training images for training the model and 10000 testing images for testing the trained model. The training dataset in this paper has 785 columns which are the 'label'. This is the corresponding '0 to 9' digit that was handwritten and the remaining columns are the '0 to 255' pixel values associated with the black and white image. The testing dataset is the same as the training dataset execept without containing the labels to validate the accuracy of the model.
+The MNIST dataset \cite{mnsitpic} contains gray-scale, black and white images of hand-drawn numerical digits from zero to nine (0, 1, 2, 3, 4, 5, 6, 7, 8, 9). Each image is 28 pixels in height by 28 pixels in width) contains a total of 784 pixels, where each pixel value is an integer from 0 to 255 resulting in black to white. The dataset consits of 60000 training images for training the model and 10000 testing images for testing the trained model. The training dataset in this paper has 785 columns which are the 'label'. This is the corresponding '0 to 9' digit that was handwritten and the remaining columns are the '0 to 255' pixel values associated with the black and white image. The testing dataset is the same as the training dataset execept without containing the labels to validate the accuracy of the model.
 
 
 \subsection{Network Architecture}
@@ -74,7 +75,7 @@ The MNIST dataset [9] contains gray-scale, black and white images of hand-drawn 
   \label{fig:mnist}
 \end{figure}
 
-The Neural Network [Figure 2] is a fully-connected, feed-forward neural network that consits of an input layer, hidden layer and output layer. The input layer (first layer x) consits of 784 neurons which correspons to the 784 pixels in the 28x28 flattened image for each of the images in the MNSIT dataset. The hidden layer (second layer) consits of 10 neurons where the corresponding weights and biases connecting to this layer and initialised with random values between -0.5 to 0.5. In addition, the activiation function used in the hidden layer is the ReLu (Rectified Linear unit) activation function. The output layer (third layer) consits of 10 neurons which is the precition of what numerical digit the input image represents from 0 to 9 resulting in 10 possible numerical digit classes.
+The Neural Network [Figure 3] is a fully-connected, feed-forward neural network that consits of an input layer, hidden layer and output layer. The input layer (first layer x) consits of 784 neurons which correspons to the 784 pixels in the 28x28 flattened image for each of the images in the MNSIT dataset. The hidden layer (second layer) consits of 10 neurons where the corresponding weights and biases connecting to this layer and initialised with random values between -0.5 to 0.5. In addition, the activiation function used in the hidden layer is the ReLu (Rectified Linear unit) activation function. The output layer (third layer) consits of 10 neurons which is the precition of what numerical digit the input image represents from 0 to 9 resulting in 10 possible numerical digit classes.
 
 \vspace{1em}
 The parameters of this Neural Network consits of a 'weight1' which has a shape of (10,784) connecting the input to the hidden layer, 'bias 1' which has a shape of (10,1) which are the biases for the hidden layer, 'weight 2' which has a shape (10,10) connecting the hidden layer to the output layer and 'bias2' which has a shape of (10,1) which are the biases of the output layer. This results in this simple MNIST Digit Classifier Neural Network having a total of 7960 trainable parameters with 7840 weights, 10 biases between the input layer and hidden layer, 100 weights, 10 biases between the hidden layer and putput layer.
@@ -205,7 +206,7 @@ Finally, here in this simple MNIST Digit Classifier Neural Network Model, for ev
 \section{Experimental Evaluation}
 
 \subsection{Benchmarks and Setup}
-In order to evaluate the performance of the 'Simple MNIST Digit Classifier Neural Network', the MNIST dataset for classifying and recognising handwritten digtis was used as the benchmark. This MNIST dataset consists of 60000 training images for training the model and 10000 testing images for testing the trained model. Each image is 28x28 black and white pixel image with a total of 784 pixels per image, labelled with the coresponding digit classifying '0 to 9' digit. This benchmark was selected for this Research Project as it serves as the main benchmark for evaluating image processing systems/ machine learning algorithms such as for this 'Simple MNIST Digit Classifier Neural Network' as well as allowing for direct comparison with the LeNet-5 architecture (LeCun et al., 1998) [3].
+In order to evaluate the performance of the 'Simple MNIST Digit Classifier Neural Network', the MNIST dataset for classifying and recognising handwritten digtis was used as the benchmark. This MNIST dataset consists of 60000 training images for training the model and 10000 testing images for testing the trained model. Each image is 28x28 black and white pixel image with a total of 784 pixels per image, labelled with the coresponding digit classifying '0 to 9' digit. This benchmark was selected for this Research Project as it serves as the main benchmark for evaluating image processing systems/ machine learning algorithms such as for this 'Simple MNIST Digit Classifier Neural Network' as well as allowing for direct comparison with the LeNet-5 architecture (LeCun et al., 1998) \cite{lenet}.
 
 \vspace{1em}
 All experiments were conducted on a Laptop equipped with Intel i7-1360P CPU (5GHz), 16 GB RAM, running Ubuntu 25.04. The implementation was programmed using Python 3.13.3 via Juypter Notebook using the core libraries: Numpy 2.3.2, Matplotlib 3.10.5, Pandas 2.3.1, tqdm 4.67.1. All training was performed on-device via CPU without GPU Or TPU Or NPU acceleration.
@@ -220,11 +221,11 @@ The second 'working implementation*' achived a slightly improved classification 
 The third 'working implementation*' achived a much improved classification probability accuracy of appoximately 89\% on the training dataset with 1000 iterations and rate of learning of 0.1. In the testing dataset, it also achieved a much improved classification accuracy of appoximately 88\% with 1000 iterations and rate of learning 0.1. This much improved implementation was due to the fixes previously mentioned before as well as implementing a progress indication (via the tqdm library) during training so that the user can track the progress throughout the training of the Neural Network model. These changes resuted in a more stable learning experience for the model, correctly identifying 10 random numerical handwritten digits out of the possible 10 random numerical handwritten digits from the training dataset when testing after training the model with the training dataset. With the testing dataset, out of possible 10 random numerical handwritten digits from the testing dataset, the trained Neural Network model achieved correctly 9 numerical handwritten digit classifications.
 
 \subsection{Limitations and Anomalies}
-While repeated training of the 'Simple MNSIT Digit Classifier Neural Network' and evaluating results, random, non-deterministic misclassification results were observed. For example, during one run of training at the end [10], the Neural Network predicted the numerical digit '3' instead of correctly predicting the numerical digit '8, resulting in a misclassification. We cannot fully explain this behaviour but we think it is due to the randomness in the training process such as initialising random weights, shuffling the traning set, the precision of floating point in Matrix operations. These stochastic effects may have lead to slight variations in paramters while learning, reultung in this misclassification.
+While repeated training of the 'Simple MNSIT Digit Classifier Neural Network' and evaluating results, random, non-deterministic misclassification results were observed. For example, during one run of training at the end \cite{result}, the Neural Network predicted the numerical digit '3' instead of correctly predicting the numerical digit '8, resulting in a misclassification. We cannot fully explain this behaviour but we think it is due to the randomness in the training process such as initialising random weights, shuffling the traning set, the precision of floating point in Matrix operations. These stochastic effects may have lead to slight variations in paramters while learning, reultung in this misclassification.
 
 \section{Conclusion and Future Work}
 \subsection{Summary}
-We have presented the 'Simple MNIST Digit Classifier Neural Network', a system that is made from scratch in Python with only core libraries such as NumPy, Matplotlib, Pandas and tqdm. The purpose was to implement a feed-foward neural network model/MLP (multilayer perceptron) that can recognise and classify numerical handwritten digits from the MNIST data as well as gaining a deeper understanding of the underlying core mathematics and algorithms such as forward propagation, backpropagation, ReLu (Rectified Linear unit) activation function, Softmax activation function\dots
+We have presented the 'Simple MNIST Digit Classifier Neural Network' \cite{simplemnsit}, a system that is made from scratch in Python with only core libraries such as NumPy, Matplotlib, Pandas and tqdm. The purpose was to implement a feed-foward neural network model/MLP (multilayer perceptron) that can recognise and classify numerical handwritten digits from the MNIST data as well as gaining a deeper understanding of the underlying core mathematics and algorithms such as forward propagation, backpropagation, ReLu (Rectified Linear unit) activation function, Softmax activation function\dots
 
 \subsection{Experimental Results}
 The experimental results obtained using the MNIST dataset indicate that the 'Simple MNIST Digit Classifier Neural Network' achieved an accuracy of 89\% with consistent performance throught the training of the network and testing of the network despite ocassional stochastic results. All experiments were conducted with only CPU computation without access to a GPU, NPU, TPU hardware acceleration as well as no use of heavy, high-level frameworks such as PyTorch, TensorFlow, JAX. This clearly demonstrates the viability that a model can achive respectable performance on-par with modern implementations and previous implementations with only core libraries and fundamental mathematics.
@@ -241,6 +242,52 @@ Future work would be to further investigate the non-deterministic misclassificat
 
 \begin{thebibliography}{9}
 % TODO: Add citations here.
+\bibitem{jayadevan2011survey}
+R. Jayadevan, S. Kolhe, P. M. Patil, U. Pal,
+“Automatic processing of handwritten bank cheque images: A survey,”
+*International Journal on Document Analysis and Recognition*, Dec. 2011.
+
+\bibitem{kaggle-train-digits}
+Kaggle, “Digit Recognizer – train.csv dataset.” \\
+\url{https://www.kaggle.com/competitions/digit-recognizer/data?select=train.csv}
+
+\bibitem{kaggle-test-digits}
+Kaggle, “Digit Recognizer – test.csv dataset.” \\
+\url{https://www.kaggle.com/competitions/digit-recognizer/data?select=test.csv}
+
+\bibitem{simplemnsit}
+Simple MNIST Digit Classifier Neural Network Source Code - GitHub \\
+\url{https://github.com/T-Kalv/Simple-MNIST-Digit-Classifier-Neural-Network}
+
+\bibitem{lenet}
+LeNet-5 Research Paper \\
+\url{https://axon.cs.byu.edu/~martinez/classes/678/Papers/Convolution_nets.pdf}
+
+\bibitem{PyTorch}
+PyTorch - Website \\
+\url{https://pytorch.org/}
+
+\bibitem{Keras}
+Keras - Website \\
+\url{https://axon.cs.byu.edu/~martinez/classes/678/Papers/Convolution_nets.pdf}
+
+\bibitem{TensorFlow}
+TensorFlow - Website \\
+\url{https://www.tensorflow.org/}
+
+\bibitem{JAX}
+JAX - Website \\
+\url{https://docs.jax.dev/en/latest/index.html}
+
+\bibitem{mnsitpic}
+Suvanjanprasai, “Image of MNIST Numbers,” Wikimedia Commons, CC BY-SA 4.0.\\
+\url{https://commons.wikimedia.org/w/index.php?curid=156115980}
+
+
+\bibitem{result}
+Simple MNIST Digit Classifier Neural Network Juypter Notebook - GitHub\\
+\url{https://github.com/T-Kalv/Simple-MNIST-Digit-Classifier-Neural-Network/blob/main/SimpleMNISTDigitClassifier.ipynb}
+
 \end{thebibliography}
 
 \end{document}
